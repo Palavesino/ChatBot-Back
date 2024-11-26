@@ -7,6 +7,7 @@ const BaileysProvider = require('@bot-whatsapp/provider/baileys');
 const MockAdapter = require('@bot-whatsapp/database/mock');
 require('dotenv').config();
 
+const port = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 
