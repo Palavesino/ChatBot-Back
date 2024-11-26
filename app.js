@@ -2,15 +2,17 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 const path = require('path');
-const { createBot, createProvider, createFlow } = require('@bot-whatsapp/bot')
+const { createBot, createProvider, createFlow, EVENTS,addKeyword } = require('@bot-whatsapp/bot')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 const MockAdapter = require('@bot-whatsapp/database/mock')
-const flowMenu = require('./Flow/Menu/Menu');
 require('dotenv').config()
-
 const app = express();
 const port = process.env.PORT || 3000; 
 app.use(cors());
+
+const flowMenu = addKeyword(EVENTS.WELCOME)
+.addAnswer('ᴡ ᴇ ʟ ᴄ ᴏ ᴍ ᴇ  𝓣𝓸  𝓒𝓱𝓪𝓽𝓑𝓸𝓽 The New WORLD')
+
 
 const main = async () => {
   const adapterDB = new MockAdapter()
