@@ -55,5 +55,10 @@ app.get('/get-qr', async (req, res) => {
   }
 });
 
+// Arrancar el servidor de Express
+app.listen(port, () => {
+  console.log(`Servidor Express corriendo en http://localhost:${port}`);
+});
+
 // Exportar la aplicación en lugar de iniciar el servidor
 module.exports = app;
