@@ -7,3 +7,4 @@ Test/queue.class.log
 Test/core.class.log
 .env
 .env.*
+.vercel
